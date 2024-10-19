@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Display Screen for showing the result -->
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="#E0E0E0"
+        android:gravity="end"
+        android:padding="24dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline" />
+
+    <!-- Guideline to control button layout position -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <!-- Number and operator buttons arranged in a grid -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="4"
+        android:rowCount="5"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Buttons (digits, operators, and equals) -->
+        <!-- Row 1 -->
+        <Button
+            android:id="@+id/btn7"
+            android:onClick="onDigitClick"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:onClick="onDigitClick"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            android:onClick="onDigitClick"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:onClick="onOperatorClick"
+            android:text="/" />
+
+        <!-- Row 2 -->
+        <Button
+            android:text="4"
+            android:id="@+id/btn4"
+            android:onClick="onDigitClick"
+            />
+        <Button android:text="5" android:id="@+id/btn5"
+            android:onClick="onDigitClick"
+            />
+
+        <Button
+            android:id="@+id/btn6"
+            android:onClick="onDigitClick"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:onClick="onOperatorClick"
+            android:text="*" />
+
+        <!-- Row 3 -->
+        <Button
+            android:id="@+id/btn1"
+            android:onClick="onDigitClick"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:onClick="onDigitClick"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:onClick="onDigitClick"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btnMinus"
+            android:onClick="onOperatorClick"
+            android:text="-" />
+
+        <!-- Row 4 -->
+        <Button
+            android:id="@+id/btnClear"
+            android:onClick="onClearClick"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/btn0"
+            android:onClick="onDigitClick"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnEqual"
+            android:onClick="onEqualClick"
+            android:text="=" />
+
+        <Button
+            android:id="@+id/btnPlus"
+            android:onClick="onOperatorClick"
+            android:text="+" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
